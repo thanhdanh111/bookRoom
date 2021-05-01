@@ -2,7 +2,7 @@
 import react , {useState, useEffect} from 'react'
 import {auth,db} from './chat/firebase'
 import LoginDemo from './Logindemo/LoginDemo';
-import { Switch, Route } from "react-router-dom";
+import {HashRouter as Switch, Route,Router } from "react-router-dom";
 import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
@@ -35,22 +35,26 @@ function App() {
        <>
         <>
       <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/rooms/" component={Rooms} />
-        <Route exact path="/rooms/:slug" component={SingleRoom} />
-        <Route exact path="/rooms/:slug/create-card" children={<CreateCard user={user} db={db} />} />
-        <Route exact path="/rooms/:slug/:nameProcard" children={<RoomAccept user={user} db={db} />} />
-        <Route component={Home} />
-      </Switch>
+      <>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/rooms/" component={Rooms} />
+          <Route exact path="/rooms/:slug" component={SingleRoom} />
+          <Route exact path="/rooms/:slug/create-card" children={<CreateCard user={user} db={db} />} />
+          <Route exact path="/rooms/:slug/:nameProcard" children={<RoomAccept user={user} db={db} />} />
+          <Route component={Home} />
+        </Switch>
+      </>
     </>
        </>
      )
      :
-     <Switch>
-          <Route exact path="/" component={LoginDemo} />
-          <Route  component={LoginDemo} />
-     </Switch>
+     <>
+      <Switch>
+            <Route exact path="/" component={LoginDemo} />
+            <Route  component={LoginDemo} />
+      </Switch>
+     </>
    }
     </>
   );
