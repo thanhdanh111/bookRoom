@@ -10,6 +10,7 @@
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
+  --gold: #FEA431;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -17,6 +18,7 @@
 }
 /* globals */
 body {
+  padding-top: 66px;
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -64,6 +66,8 @@ h6 {
   transition: var(--mainTransition);
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: 1.2em;
+  /* box-shadow: var( --border); */
 }
 .btn-primary:hover {
   background: transparent;
@@ -94,7 +98,7 @@ h6 {
   left: 0;
   width: 100%;
   padding: 0.75rem 2rem;
-  background: var(--offWhite);
+  background:  var(--mainWhite);
   z-index: 1;
 }
 .nav-header {
@@ -167,7 +171,7 @@ h6 {
 /* Banner */
 .banner {
   display: inline-block;
-  color: var(--mainWhite);
+  color: var(--gold);
   padding: 2rem 1rem;
   text-align: center;
   text-transform: capitalize;
@@ -186,6 +190,7 @@ h6 {
 .banner p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color:var(--mainBlack);
 }
 @media screen and (min-width: 576px) {
   .banner {
